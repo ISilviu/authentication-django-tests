@@ -26,7 +26,7 @@ environ.Env.read_env(os.path.join(CURRENT_DIR, ENV_FILE))
 ENABLE_AUTHENTICATION = env.bool('ENABLE_AUTHENTICATION', True)
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-)3@n!^oe(lk(v+m^ikx=bh+%#6=6e@3sn6q&9t&lz3lpp(ezzo'
+SECRET_KEY = env.str('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
