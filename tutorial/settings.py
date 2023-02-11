@@ -20,9 +20,10 @@ CURRENT_DIR = Path(__file__).resolve().parent
 BASE_DIR = CURRENT_DIR.parent
 
 env = environ.Env()
-environ.Env.read_env(os.path.join(CURRENT_DIR, '.env'))
+ENV_FILE = os.environ.get('ENV_FILE', '.env')
+environ.Env.read_env(os.path.join(CURRENT_DIR, ENV_FILE))
 
-ENABLE_AUTHENTICATION = env.bool('ENABLE_AUTHENTICATION', False)
+ENABLE_AUTHENTICATION = env.bool('ENABLE_AUTHENTICATION', True)
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-)3@n!^oe(lk(v+m^ikx=bh+%#6=6e@3sn6q&9t&lz3lpp(ezzo'
